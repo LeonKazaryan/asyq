@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A5A9C0DE000000000000E030 /* AsyqPhysics in Frameworks */ = {isa = PBXBuildFile; productRef = A5A9C0DE000000000000E031 /* AsyqPhysics */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A5A9C0DE000000000000E010 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A9C0DE000000000000E030 /* AsyqPhysics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,7 @@
 			);
 			name = Asyq;
 			packageProductDependencies = (
+				A5A9C0DE000000000000E031 /* AsyqPhysics */,
 			);
 			productName = Asyq;
 			productReference = A5A9C0DE000000000000E004 /* Asyq.app */;
@@ -161,6 +167,9 @@
 			);
 			mainGroup = A5A9C0DE000000000000E002;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A5A9C0DE000000000000E032 /* XCLocalSwiftPackageReference "Packages/AsyqPhysics" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A5A9C0DE000000000000E003 /* Products */;
 			projectDirPath = "";
@@ -471,6 +480,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A5A9C0DE000000000000E032 /* XCLocalSwiftPackageReference "Packages/AsyqPhysics" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AsyqPhysics;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A5A9C0DE000000000000E031 /* AsyqPhysics */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AsyqPhysics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A5A9C0DE000000000000E001 /* Project object */;
 }
