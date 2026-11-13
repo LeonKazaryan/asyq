@@ -56,8 +56,9 @@ struct SimulationTests {
         // send a kenei out of the circle: the game is playable.
         var hitKon = 0
         var knockedOut = 0
+        // Half a pull lands on the kon (`ThrowInput.range`); sweep around it.
         for step in 0..<21 {
-            let power = 0.55 + Float(step) * 0.01
+            let power = 0.46 + Float(step) * 0.01
             let result = play(ThrowInput(angle: Float(step % 3 - 1) * 0.01, power: power))
             if result.hits.contains(where: \.isSaqaOnKenei) { hitKon += 1 }
             for index in 0..<result.simulation.keneiCount {
@@ -79,7 +80,7 @@ struct SimulationTests {
         world.addStaticBox(halfExtents: [10, 0.5, 10], position: [0, -0.5, 0], material: GameTuning.Surface.carpet)
         let shape = world.makeRoundedBoxShape(halfExtents: BoneShape.kenei.halfExtents, cornerRadius: BoneShape.kenei.cornerRadius)
         var counts: [Side: Int] = [:]
-        var generator = SplitMix(seed: 2026)
+        var generator = SeededRandom(seed: 2026)
         let throwCount = 600
         for _ in 0..<throwCount {
             let axis = SIMD3<Float>(generator.unit(), generator.unit(), generator.unit())
@@ -106,25 +107,5 @@ struct SimulationTests {
         #expect(wide > narrow)
         #expect(narrow > ends)
         #expect(Double(wide) / Double(throwCount) > 0.45)
-    }
-}
-
-/// A tiny seeded generator, so the frequency test is the same every run.
-struct SplitMix {
-    var state: UInt64
-
-    init(seed: UInt64) { state = seed }
-
-    mutating func next() -> UInt64 {
-        state &+= 0x9E37_79B9_7F4A_7C15
-        var z = state
-        z = (z ^ (z >> 30)) &* 0xBF58_476D_1CE4_E5B9
-        z = (z ^ (z >> 27)) &* 0x94D0_49BB_1331_11EB
-        return z ^ (z >> 31)
-    }
-
-    /// −1…1.
-    mutating func unit() -> Float {
-        Float(next() >> 40) / Float(1 << 24) * 2 - 1
     }
 }

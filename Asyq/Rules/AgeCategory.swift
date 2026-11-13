@@ -29,6 +29,26 @@ enum AgeCategory: String, CaseIterable, Sendable {
         self == .eresek ? 15 : 13
     }
 
+    /// The category's name in the game (docs/05-rules.md, §3).
+    var term: String {
+        switch self {
+        case .bala: "Бала"
+        case .jasospirim: "Жасөспірім"
+        case .jigit: "Жігіт"
+        case .eresek: "Ересек"
+        }
+    }
+
+    /// The ages the Регламент made it for.
+    var ages: String {
+        switch self {
+        case .bala: "7–10"
+        case .jasospirim: "11–13"
+        case .jigit: "14–16"
+        case .eresek: "17+"
+        }
+    }
+
     /// Kenei to knock out first to win a partia.
     var winningCount: Int {
         self == .eresek ? 8 : 7

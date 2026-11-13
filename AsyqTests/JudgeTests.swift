@@ -48,4 +48,47 @@ struct JudgeTests {
             #expect(!isOut(atDistance: radius - 0.2, direction: direction))
         }
     }
+
+    // MARK: - Zones for the referee's commands
+
+    private func zone(_ x: Float, _ z: Float, _ category: AgeCategory = .eresek) -> KeneiZone {
+        Judge.zone(of: SIMD3(x, 0.01, z), category: category)
+    }
+
+    @Test func betweenTheParallelLinesAlongTheKonIsParallel() {
+        #expect(zone(0, 0) == .parallel)
+        #expect(zone(0.5, 0.15) == .parallel)
+        #expect(zone(-0.575, -0.15) == .parallel)
+    }
+
+    @Test func pastTheParallelLinesOrTheKonsEndsIsNot() {
+        #expect(zone(0.5, 0.151) == .middle)
+        #expect(zone(0.576, 0) == .middle)
+        // The kids' kon is shorter: 110 cm.
+        #expect(zone(0.56, 0, .bala) == .middle)
+        #expect(zone(0.54, 0, .bala) == .parallel)
+    }
+
+    @Test func withinATabanOfTheCircleLineIsBesTaban() {
+        let edge = radius - GameTuning.Rules.taban
+        #expect(zone(0, edge + 0.001) == .nearCircle)
+        #expect(zone(0, edge - 0.001) == .middle)
+        #expect(zone(-(edge + 0.01) / Float(2).squareRoot(), (edge + 0.01) / Float(2).squareRoot()) == .nearCircle)
+        // The kids' circle is smaller.
+        #expect(zone(0, 1.3, .bala) == .nearCircle)
+        #expect(zone(0, 1.2, .bala) == .middle)
+    }
+
+    @Test func landingShortOutsideTheCircleIsASlide() {
+        let spot = SIMD3<Float>(0, 0, 6)
+        #expect(Judge.isSlide(landing: [0, 0, 3.5], spot: spot, target: .zero, category: .eresek))
+        #expect(!Judge.isSlide(landing: [0, 0, 2.0], spot: spot, target: .zero, category: .eresek))
+    }
+
+    @Test func overshootingBeyondTheFarSideIsNoSlide() {
+        let spot = SIMD3<Float>(0, 0, 6)
+        #expect(!Judge.isSlide(landing: [0, 0, -3.5], spot: spot, target: .zero, category: .eresek))
+        // The rival throws the other way.
+        #expect(Judge.isSlide(landing: [0, 0, -3.5], spot: [0, 0, -6], target: .zero, category: .eresek))
+    }
 }

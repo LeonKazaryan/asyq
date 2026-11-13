@@ -56,7 +56,11 @@ xcrun simctl launch --terminate-running-process "iPhone 16 Pro" com.leonkazaryan
 xcrun simctl io "iPhone 16 Pro" screenshot shot.png
 ```
 
-- `-AsyqDebugThrow угол°,сила[,подкрутка]` — бросает сам через 1,2 с. Отрицательный угол не передать (значение с «-» читается как новый флаг).
+- `-AsyqDebugScreen match|practice` — сразу на экран, без меню.
+- `-AsyqDebugAutoplay YES` — в матче бот играет и за тебя: можно смотреть матч целиком. Ход судьи пишется в консоль строками `[match] …` (`xcrun simctl launch --console-pty …`).
+- `-AsyqDebugSeed N` — кости соперника: матч повторяется один в один.
+- `-AsyqDebugSpin сила,наклон` — иіру само крутится.
+- `-AsyqDebugThrow угол°,сила[,подкрутка]` — в тренировке бросает сам через 1,2 с. Отрицательный угол не передать (значение с «-» читается как новый флаг).
 - `-AsyqDebugPull сила,прицел` — держит рогатку натянутой, видно предпросмотр.
 - `-AsyqDebugFromEdge YES` — бросок с края круга.
 - `-AsyqDebugCategory bala|jasospirim|jigit|eresek` — категория.

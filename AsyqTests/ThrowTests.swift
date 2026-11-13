@@ -58,7 +58,7 @@ struct ThrowLaunchTests {
         let launch = ThrowLaunch(input: input, release: ThrowLaunch.releasePoint(spot: spot, target: target), spot: spot, target: target)
         let landing = try #require(launch.trajectory(samples: 200).last)
         let travelled = simd_length(SIMD2(landing.x - spot.x, landing.z - spot.z))
-        #expect(abs(travelled - input.range) < 0.03)
+        #expect(abs(travelled - input.range(over: 6)) < 0.03)
         #expect(abs(landing.y) < 1e-3)
     }
 
@@ -74,6 +74,13 @@ struct ThrowLaunchTests {
         let release = ThrowLaunch.releasePoint(spot: spot, target: target)
         #expect(release.z > spot.z)
         #expect(release.y > 0.2 && release.y < 0.6)
+    }
+
+    @Test func halfAPullLandsOnTheTargetFromAnywhere() {
+        let half = ThrowInput(angle: 0, power: 0.5)
+        for distance: Float in [1.35, 2.5, 3, 6] {
+            #expect(abs(half.range(over: distance) - distance) < 1e-5)
+        }
     }
 
     @Test func inputsOutOfRangeAreClamped() {

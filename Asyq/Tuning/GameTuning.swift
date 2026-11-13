@@ -36,6 +36,8 @@ enum GameTuning {
     }
 
     enum Field {
+        /// Kenei closer than this to their slot, and barely turned, haven't moved.
+        static let slotTolerance: Float = 0.002
         /// Gap between kenei on the kon is one saqa (Регламент, с. 62).
         static var keneiSpacing: Float { 2 * Bone.keneiHalfExtents.x + 2 * Bone.saqaHalfExtents.x }
         /// Kenei are placed this far above the carpet so they never start interpenetrating it.
@@ -45,13 +47,16 @@ enum GameTuning {
     enum Throw {
         /// Регламент-style aim limit, docs/research/game-design.md: ±8°.
         static let maxAimAngle: Float = 8 * .pi / 180
-        /// Power maps linearly onto where the saqa would land on bare carpet.
-        static let minRange: Float = 1.0
-        static let maxRange: Float = 9.0
-        /// A low, flat throw from a crouch, as in real atu. Measured 2026-11-13 over 123 throws
-        /// at the adult kon: released at 0.35 m and 6° the saqa reaches the kon in 61% of
-        /// throws and knocks a kenei out in 50%; from 0.95 m only 2% knock one out.
-        static let launchElevation: Float = 6 * .pi / 180
+        /// Power maps linearly onto where the saqa would land on bare carpet, as a share of
+        /// the distance to the target: the same pull means the same thing from every spot.
+        static let minRangeShare: Float = 0.35
+        static let maxRangeShare: Float = 1.65
+        /// A low, flat throw from a crouch, as in real atu (ADR-010): the saqa comes down onto
+        /// the target at this angle from every distance. Measured 2026-11-13, 33 throws per
+        /// category and spot landing 20 cm short to 30 cm long: at 10° a hit knocks a kenei out
+        /// 55–85% of the time everywhere, at 8° almost always, at 12° from 25% to 100%.
+        static let arrivalAngle: Float = 10 * .pi / 180
+        /// The hand's height for long throws; closer in it drops (`ThrowLaunch.releasePoint`).
         static let releaseHeight: Float = 0.35
         /// Behind the throw line: a throw must leave the hand before the line (Регламент, п. 1.4).
         static let releaseBehind: Float = 0.25
@@ -105,6 +110,8 @@ enum GameTuning {
         static let chaseHeight: Float = 0.38
         static let chaseMinDistance: Float = 1.5
         static let chaseFieldOfView: Float = 34 * .pi / 180
+        /// Aiming at one kenei (a referee's command): the lens frames this much width.
+        static let singleKeneiFraming: Float = 0.45
         /// After the first hit the camera swings round the impact by this much.
         static let impactOrbit: Float = 15 * .pi / 180
         static let impactDistance: Float = 1.15
@@ -127,6 +134,35 @@ enum GameTuning {
         static let chaseSpring = SpringParameters(response: 0.22, dampingRatio: 1)
         static let impactSpring = SpringParameters(response: 0.5, dampingRatio: 0.85)
         static let overviewSpring = SpringParameters(response: 0.95, dampingRatio: 0.9)
+    }
+
+    /// Spinning a saqa to decide who starts.
+    enum Iiru {
+        static let dropHeight: Float = 0.3
+        static let dropSpeed: Float = 0.6
+        /// rad/s about the length, from a lazy flick to a hard one.
+        static let minSpin: Float = 18
+        static let maxSpin: Float = 55
+        static let twist: Float = 6
+        /// Where it happens: just outside the circle on the home side, off the axis.
+        static let besideCircle: Float = 0.8
+        static let offAxis: Float = 0.6
+        /// The two saqas land a hand apart.
+        static let spacing: Float = 0.16
+        /// A flick this fast, in points per second, spins at full strength.
+        static let fullFlick: Double = 2600
+    }
+
+    /// The stand-in rival until M5.
+    enum Rival {
+        static let aimSpread: Float = 1.6 * .pi / 180
+        /// Without a kenei to aim at: half a pull and a hair more.
+        static let power: Float = 0.53
+        /// Aims this share past the kenei, to strike rather than fall short.
+        static let overshoot: Float = 0.04
+        static let powerSpread: Float = 0.06
+        /// Pause behind the line before the rival throws, seconds.
+        static let thinkTime: Double = 1.1
     }
 
     enum SlowMotion {
@@ -164,5 +200,14 @@ enum GameTuning {
         /// Shadow map covers this half-size around the action.
         static let shadowHalfExtent: Float = 4.8
         static let shadowMapSize = 2048
+    }
+}
+
+extension GameTuning {
+    /// Measures the Регламент leaves to us (docs/05-rules.md, 🟡).
+    enum Rules {
+        /// One taban, a foot: «Бес табан» is five of them along the circle, and a kenei within
+        /// one of the circle line earns that command (каз. п. 2.1). docs/05-rules.md, question 8.
+        static let taban: Float = 0.27
     }
 }

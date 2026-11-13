@@ -40,6 +40,8 @@ enum Palette {
     static let bone = PaletteColor(hex: 0xEEE3D0)
     /// The player's painted saqa: көк, deep sky blue.
     static let saqa = PaletteColor(hex: 0x1E5C78)
+    /// The rival's saqa: алтын, gold ochre.
+    static let rivalSaqa = PaletteColor(hex: 0xC48A2C)
 
     // Interface.
     static let ink = PaletteColor(hex: 0x2A1F19)

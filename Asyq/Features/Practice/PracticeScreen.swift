@@ -1,57 +1,35 @@
 import SwiftUI
 
-/// M1: throw at the kon. The arena fills the screen; the slingshot works anywhere below the
-/// top bar; the HUD floats on glass.
+/// Free throwing at the kon.
 struct PracticeScreen: View {
-    @State private var controller = PracticeController(category: DebugLaunchArguments.category ?? .eresek)
+    @State private var controller: PracticeController
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    var onClose: (() -> Void)?
+
+    init(category: AgeCategory, onClose: (() -> Void)? = nil) {
+        _controller = State(initialValue: PracticeController(category: category))
+        self.onClose = onClose
+    }
 
     var body: some View {
         ZStack {
-            ArenaView(controller: controller)
+            ArenaView(stage: controller.stage)
                 .ignoresSafeArea()
-            vignette
-            slingshotSurface
-            PracticeHUD(controller: controller)
+            ArenaVignette()
+            SlingshotSurface(stage: controller.stage)
+            PracticeHUD(controller: controller, onClose: onClose)
+            #if DEBUG
+            FrameRateBadge(stage: controller.stage)
+            #endif
         }
         .statusBarHidden()
         // Pulling down near the bottom edge mustn't fling the app away.
         .defersSystemGestures(on: .bottom)
-        .onAppear { controller.reduceMotion = reduceMotion }
-        .onChange(of: reduceMotion) { _, newValue in controller.reduceMotion = newValue }
-    }
-
-    /// Darkens the corners a touch, like a lens: keeps the eye on the kon.
-    private var vignette: some View {
-        RadialGradient(
-            colors: [.clear, Palette.ink.color.opacity(0.18)],
-            center: .center,
-            startRadius: 180,
-            endRadius: 620
-        )
-        .ignoresSafeArea()
-        .allowsHitTesting(false)
-    }
-
-    private var slingshotSurface: some View {
-        Color.clear
-            .contentShape(Rectangle())
-            .ignoresSafeArea()
-            .gesture(
-                DragGesture(minimumDistance: 0, coordinateSpace: .local)
-                    .onChanged { value in
-                        if controller.pullPower == nil {
-                            controller.beginPull(at: value.startLocation)
-                        }
-                        controller.updatePull(to: value.location)
-                    }
-                    .onEnded { value in
-                        controller.endPull(velocity: CGVector(dx: value.velocity.width, dy: value.velocity.height))
-                    }
-            )
+        .onAppear { controller.stage.reduceMotion = reduceMotion }
+        .onChange(of: reduceMotion) { _, newValue in controller.stage.reduceMotion = newValue }
     }
 }
 
 #Preview {
-    PracticeScreen()
+    PracticeScreen(category: .eresek)
 }

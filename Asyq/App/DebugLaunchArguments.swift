@@ -24,6 +24,35 @@ enum DebugLaunchArguments {
         #endif
     }
 
+    /// `-AsyqDebugSeed N`: the rival's dice, for a match that plays the same every time.
+    static var seed: UInt64? {
+        numbers("AsyqDebugSeed").map { UInt64($0[0]) }
+    }
+
+    /// `-AsyqDebugScreen practice|match`: skip the menu.
+    static var screen: String? {
+        #if DEBUG
+        UserDefaults.standard.string(forKey: "AsyqDebugScreen")
+        #else
+        nil
+        #endif
+    }
+
+    /// `-AsyqDebugSpin strength,tilt`: in a match, spins the iiru by itself.
+    static var spin: (strength: Float, tilt: Float)? {
+        guard let values = numbers("AsyqDebugSpin"), values.count >= 2 else { return nil }
+        return (Float(values[0]), Float(values[1]))
+    }
+
+    /// `-AsyqDebugAutoplay YES`: in a match, a bot plays for you too — watch a whole match.
+    static var autoplay: Bool {
+        #if DEBUG
+        UserDefaults.standard.bool(forKey: "AsyqDebugAutoplay")
+        #else
+        false
+        #endif
+    }
+
     /// `-AsyqDebugCategory bala|jasospirim|jigit|eresek`.
     static var category: AgeCategory? {
         #if DEBUG

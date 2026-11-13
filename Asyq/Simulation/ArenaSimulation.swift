@@ -10,6 +10,8 @@ final class ArenaSimulation {
     enum Piece: Hashable, Sendable {
         case kenei(Int)
         case saqa
+        /// A player's saqa spun to decide who starts (иіру), away from the kon.
+        case iiru(Player)
         case carpet
     }
 
@@ -50,6 +52,7 @@ final class ArenaSimulation {
     private let carpetID: BodyID
     private var keneiIDs: [BodyID?] = []
     private var saqaID: BodyID?
+    private var iiruIDs: [Player: BodyID] = [:]
     private var pieces: [BodyID: Piece] = [:]
     private var previous: [Piece: Pose] = [:]
     private var current: [Piece: Pose] = [:]
@@ -132,6 +135,17 @@ final class ArenaSimulation {
         previous[.saqa] = nil
     }
 
+    /// Takes the iiru saqas off the carpet.
+    func removeIiru() {
+        for player in Player.allCases {
+            guard let id = iiruIDs[player] else { continue }
+            remove(id)
+            current[.iiru(player)] = nil
+            previous[.iiru(player)] = nil
+        }
+        iiruIDs = [:]
+    }
+
     /// Puts a kenei somewhere (after a miss: back on its slot), asleep.
     func place(kenei index: Int, at pose: Pose) {
         guard isOnField(kenei: index), let id = keneiIDs[index] else { return }
@@ -151,23 +165,41 @@ final class ArenaSimulation {
 
     func throwSaqa(_ launch: ThrowLaunch) {
         removeSaqa()
-        let id = world.addBody(shape: saqaShape, description: BodyDescription(
+        let id = addSaqa(at: launch.position, rotation: launch.rotation)
+        world.setVelocity(id, linear: launch.linearVelocity, angular: launch.angularVelocity)
+        saqaID = id
+        pieces[id] = .saqa
+        start(.saqa, at: launch.position, rotation: launch.rotation)
+    }
+
+    /// Drops a player's saqa spinning onto the carpet: иіру. Several can be in the air at once.
+    func spin(_ player: Player, _ drop: IiruDrop) {
+        if let old = iiruIDs[player] { remove(old) }
+        let id = addSaqa(at: drop.position, rotation: drop.rotation)
+        world.setVelocity(id, linear: drop.linearVelocity, angular: drop.angularVelocity)
+        iiruIDs[player] = id
+        pieces[id] = .iiru(player)
+        start(.iiru(player), at: drop.position, rotation: drop.rotation)
+    }
+
+    private func addSaqa(at position: SIMD3<Float>, rotation: simd_quatf) -> BodyID {
+        world.addBody(shape: saqaShape, description: BodyDescription(
             mass: BoneShape.saqa.mass,
             material: GameTuning.Surface.bone,
-            position: launch.position,
-            rotation: launch.rotation,
+            position: position,
+            rotation: rotation,
             linearDamping: GameTuning.Bone.linearDamping,
             angularDamping: GameTuning.Bone.angularDamping,
             continuousCollision: true
         ))
-        world.setVelocity(id, linear: launch.linearVelocity, angular: launch.angularVelocity)
-        saqaID = id
-        pieces[id] = .saqa
-        let pose = Pose(position: launch.position, rotation: launch.rotation)
-        current[.saqa] = pose
-        previous[.saqa] = pose
+    }
+
+    private func start(_ piece: Piece, at position: SIMD3<Float>, rotation: simd_quatf) {
+        let pose = Pose(position: position, rotation: rotation)
+        current[piece] = pose
+        previous[piece] = pose
         _ = world.drainContactEvents()
-        // The throw starts on a step boundary: the same input always replays the same way.
+        // Motion starts on a step boundary: the same input always replays the same way.
         accumulator = 0
         timeSinceThrow = 0
         isThrowInProgress = true
