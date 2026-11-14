@@ -46,6 +46,8 @@ final class ArenaStage {
 
     let category: AgeCategory
     @ObservationIgnored var onEvent: ((Event) -> Void)?
+    /// Lets a mode steady the player's throw (the lesson's first throws always reach the kon).
+    @ObservationIgnored var inputAssist: ((ThrowInput, Aim) -> ThrowInput)?
     @ObservationIgnored var reduceMotion = false
     /// Asks the view for frames again after it went idle.
     @ObservationIgnored var wake: (() -> Void)?
@@ -213,10 +215,11 @@ final class ArenaStage {
         self.gesture = nil
         pullPower = nil
         lastTouch = clock
-        guard let input = gesture.release(velocity: velocity) else {
+        guard var input = gesture.release(velocity: velocity) else {
             haptics.cancelPull()
             return
         }
+        if let inputAssist, let aim { input = inputAssist(input, aim) }
         haptics.release(power: Double(input.power))
         throwSaqa(input)
     }

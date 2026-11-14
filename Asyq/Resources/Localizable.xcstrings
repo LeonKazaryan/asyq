@@ -1,0 +1,2838 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ Flick the screen to spin yours.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Сақаңды иіру үшін экранды саусақпен сілте."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Смахни по экрану, чтобы закрутить свою."
+          }
+        }
+      }
+    },
+    "%@ In a match your rival would throw now — here, just try again.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Матчта енді қарсылас атар еді — мұнда тағы бір байқап көр."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ В матче сейчас бросал бы соперник — а здесь просто попробуй ещё раз."
+          }
+        }
+      }
+    },
+    "%@ Pull a little harder, so the saqa flies into the circle.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Сақа шеңберге ұшып кіруі үшін сәл қаттырақ тарт."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Натяни чуть сильнее, чтобы сақа влетела в круг по воздуху."
+          }
+        }
+      }
+    },
+    "%@ The higher side throws first.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Жоғары жағымен түскен бірінші атады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Чья сторона старше, тот бросает первым."
+          }
+        }
+      }
+    },
+    "%@ is aiming": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ көздеп жатыр"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ целится"
+          }
+        }
+      }
+    },
+    "%@ spins…": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ иіріп жатыр…"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ крутит…"
+          }
+        }
+      }
+    },
+    "%@ won it": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ кезеңді ұтты"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ выиграл партию"
+          }
+        }
+      }
+    },
+    "%@ won the match": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ матчта жеңді"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ выиграл матч"
+          }
+        }
+      }
+    },
+    "%@ · %lld kenei · %@": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$lld кеней · %3$@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ · %2$lld кенеев · %3$@"
+          }
+        }
+      }
+    },
+    "%@ — “%@”": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ — «%2$@»"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ — «%2$@»"
+          }
+        }
+      }
+    },
+    "%@, ages %@": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, жасы %2$@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, возраст %2$@"
+          }
+        }
+      }
+    },
+    "%@: %lld, partias %lld": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@: %2$lld, кезеңдер %3$lld"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@: %2$lld, партий %3$lld"
+          }
+        }
+      }
+    },
+    "%@’s side is higher — they start": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ жоғары жағымен түсті — ол бастайды"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сторона у %@ старше — начинает соперник"
+          }
+        }
+      }
+    },
+    "%@’s throw": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ атады"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бросает %@"
+          }
+        }
+      }
+    },
+    "%lld of %lld knocked out": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$lld кенейдің %1$lld-і шықты"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбито %1$lld из %2$lld"
+          }
+        }
+      }
+    },
+    "A kenei crossed the circle line: it's yours, and you throw again, closer, from the circle's edge.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кеней шеңбер сызығынан шықты: ол сенікі, енді тағы атасың — жақынырақ, шеңбердің шетінен."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кеней пересёк линию круга: он твой, и ты бросаешь снова — ближе, с края круга."
+          }
+        }
+      }
+    },
+    "A saqa weighs 28–30 g, a kenei 15–17 g: the heavier bone does the knocking.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаның салмағы 28–30 г, кенейдікі 15–17 г: ауыр асық ұрады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа весит 28–30 г, кеней — 15–17 г: бьёт кость потяжелее."
+          }
+        }
+      }
+    },
+    "Adults": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ересек"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Взрослые"
+          }
+        }
+      }
+    },
+    "Again — now from the circle's edge": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тағы да — енді шеңбердің шетінен"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ещё раз — теперь с края круга"
+          }
+        }
+      }
+    },
+    "Ages %@": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жасы %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Возраст %@"
+          }
+        }
+      }
+    },
+    "Alshy": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алшы"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алшы"
+          }
+        }
+      }
+    },
+    "Alshy beats taike, taike beats buk, buk beats shik": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алшы тәйкеден, тәйке бүктен, бүк шіктен жоғары"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алшы старше тәйке, тәйке старше бүк, бүк старше шік"
+          }
+        }
+      }
+    },
+    "As long as you knock kenei out, you keep throwing. That's your series.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кенейді шығарып тұрсаң, ата бересің. Бұл — сенің серияң."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пока выбиваешь кенеи, ты продолжаешь бросать. Это твоя серия."
+          }
+        }
+      }
+    },
+    "Back": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Артқа"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Назад"
+          }
+        }
+      }
+    },
+    "Before a match both players spin their saqa onto the carpet. Whoever lands the higher side throws first.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Матч алдында екі ойыншы да сақасын кілемге иіреді. Кімнің сақасы жоғары жағымен түссе, сол бірінші атады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перед матчем оба игрока крутят сақу на ковёр. Чья ляжет старшей стороной, тот бросает первым."
+          }
+        }
+      }
+    },
+    "Bones and field": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Асықтар мен алаң"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кости и поле"
+          }
+        }
+      }
+    },
+    "Buk": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бүк"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бүк"
+          }
+        }
+      }
+    },
+    "Circle %@": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шеңбер %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Круг %@"
+          }
+        }
+      }
+    },
+    "Circle %@, throw from %@": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шеңбер %1$@, ату қашықтығы %2$@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Круг %1$@, бросок с %2$@"
+          }
+        }
+      }
+    },
+    "Defeat": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жеңіліс"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поражение"
+          }
+        }
+      }
+    },
+    "Diagonal": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Диагональ"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Диагональ"
+          }
+        }
+      }
+    },
+    "Diagonal!": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Диагональ!"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Диагональ!"
+          }
+        }
+      }
+    },
+    "Diagram of the field seen from above: a circle with the kon of kenei across its middle, and a throw line on each side.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алаңның жоғарыдан көрінісі: шеңбер, ортасында кенейлер тігілген көн, екі жағында ату сызықтары."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Схема поля сверху: круг, посередине кон из кенеев, по обе стороны — линии броска."
+          }
+        }
+      }
+    },
+    "Diagram of the field: the circle with the kon in the middle.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алаң сызбасы: ортасында көні бар шеңбер."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Схема поля: круг с коном посередине."
+          }
+        }
+      }
+    },
+    "Diagram: the kenei lies between the kon and the circle. The thrower stands on the opposite side of the circle and throws across the kon at it.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сызба: кеней көн мен шеңбердің арасында жатыр. Ойыншы шеңбердің қарсы жағына тұрып, көннің үстінен атады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Схема: кеней лежит между коном и кругом. Игрок встаёт с противоположной стороны круга и бьёт по нему через кон."
+          }
+        }
+      }
+    },
+    "Diagram: the kenei lies between the parallel lines. The thrower stands on the circle's wing, in line with the kon, and throws along the lines at it.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сызба: кеней параллель сызықтардың арасында жатыр. Ойыншы шеңбердің қанатына, көн бойына тұрып, сызықтарды бойлай атады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Схема: кеней лежит между параллельными линиями. Игрок встаёт на «крыло» круга на оси кона и бьёт вдоль линий."
+          }
+        }
+      }
+    },
+    "Diagram: the kenei lies just inside the circle line. The thrower stands five feet along the circle from it, on either side, and throws at it.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сызба: кеней шеңбер сызығының дәл ішінде жатыр. Ойыншы шеңбер бойымен кез келген жаққа бес табан санап, соны атады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Схема: кеней лежит у самой линии круга. Игрок отмеряет пять стоп вдоль круга в любую сторону и бьёт по нему."
+          }
+        }
+      }
+    },
+    "Federation rules: knock the bones out of the circle — first to %lld of %lld wins the round": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Федерация ережесі: асықтарды шеңберден шығар — %2$lld асықтың %1$lld-ін бірінші шығарған кезеңді ұтады"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правила федерации: выбей кости из круга — кто первым выбьет %1$lld из %2$lld, выигрывает партию"
+          }
+        }
+      }
+    },
+    "First to %lld of %lld": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бірінші болып %1$lld/%2$lld"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Первым %1$lld из %2$lld"
+          }
+        }
+      }
+    },
+    "Five feet": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бес табан"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пять стоп"
+          }
+        }
+      }
+    },
+    "Five feet!": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бес табан!"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пять стоп!"
+          }
+        }
+      }
+    },
+    "From the best side to the lowest:": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ең жақсы жағынан ең төменгісіне дейін:"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "От лучшей стороны к младшей:"
+          }
+        }
+      }
+    },
+    "Got it": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Түсінікті"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Понятно"
+          }
+        }
+      }
+    },
+    "How a turn goes": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кезек қалай өтеді"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как идёт ход"
+          }
+        }
+      }
+    },
+    "How to play": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қалай ойнайды"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как играть"
+          }
+        }
+      }
+    },
+    "How to win": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қалай жеңеді"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Как выиграть"
+          }
+        }
+      }
+    },
+    "If your saqa hits a kenei that stays inside the circle, the referee gives you one more throw at it, from a new spot:": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней шеңбер ішінде қалса, төреші оны жаңа жерден тағы бір рет атуға рұқсат береді:"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Если сақа задела кеней, а он остался в круге, судья даёт ещё один бросок по нему с новой точки:"
+          }
+        }
+      }
+    },
+    "Juniors": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жасөспірім"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подростки"
+          }
+        }
+      }
+    },
+    "Kazakh knucklebones": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "асық ату"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "асык ату"
+          }
+        }
+      }
+    },
+    "Kids": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бала"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дети"
+          }
+        }
+      }
+    },
+    "Knock a kenei out of the circle": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кенейді шеңберден шығар"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбей кеней из круга"
+          }
+        }
+      }
+    },
+    "Knock out %lld of the %lld kenei first to win a round — adults play to 8 of 15. Win two rounds to win the match.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$lld кенейдің %1$lld-ін бірінші шығарсаң, кезеңді ұтасың — ересектер 15-тен 8-ге дейін ойнайды. Екі кезеңді ұтсаң, матч сенікі."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбей первым %1$lld из %2$lld кенеев, чтобы выиграть партию, — взрослые играют до 8 из 15. Две партии — и матч твой."
+          }
+        }
+      }
+    },
+    "Knock out %lld of the %lld kenei first to win the round. Win two rounds to win the match.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$lld кенейдің %1$lld-ін бірінші шығар — кезең сенікі. Екі кезеңді ұтсаң, матч сенікі."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбей первым %1$lld из %2$lld кенеев — и партия твоя. Две партии — и матч твой."
+          }
+        }
+      }
+    },
+    "Knucklebone shooting": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Асық ату"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стрельба по асыкам"
+          }
+        }
+      }
+    },
+    "Language": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тіл"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Язык"
+          }
+        }
+      }
+    },
+    "Let's throw": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Аттық"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бросаем"
+          }
+        }
+      }
+    },
+    "Lies on a narrow side. The best side there is.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тар қырымен тұрады. Ең жақсы жағы."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лежит на узком боку. Лучшая сторона."
+          }
+        }
+      }
+    },
+    "Lies on its hollow back, the hollow up. The lowest.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ойығы жоғары қарап жатады. Ең төменгісі."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лежит выемкой вверх. Самая младшая."
+          }
+        }
+      }
+    },
+    "Lies on its rounded back. Third.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дөңес арқасы жоғары қарап жатады. Үшінші."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лежит выпуклой спинкой вверх. Третья."
+          }
+        }
+      }
+    },
+    "Lies on the other narrow side. Second best.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Екінші тар қырымен тұрады. Екінші орында."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Лежит на другом узком боку. Вторая по старшинству."
+          }
+        }
+      }
+    },
+    "Menu": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мәзір"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Меню"
+          }
+        }
+      }
+    },
+    "Miss": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тимеді"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мимо"
+          }
+        }
+      }
+    },
+    "Next": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Әрі қарай"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дальше"
+          }
+        }
+      }
+    },
+    "Next partia": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Келесі кезең"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Следующая партия"
+          }
+        }
+      }
+    },
+    "No rank": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дәрежесі жоқ"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без ранга"
+          }
+        }
+      }
+    },
+    "Nothing went out of the circle. The kenei go back onto the kon and the turn passes.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шеңберден ештеңе шықпады. Кенейлер көнге қайта тігіледі, кезек қарсыласқа өтеді."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Из круга ничего не вылетело. Кенеи возвращаются на кон, ход переходит сопернику."
+          }
+        }
+      }
+    },
+    "Ompy": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Омпы"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Омпы"
+          }
+        }
+      }
+    },
+    "One more throw": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тағы бір ату"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ещё один бросок"
+          }
+        }
+      }
+    },
+    "Out!": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шықты!"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбил!"
+          }
+        }
+      }
+    },
+    "Parallel": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Параллель"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Параллель"
+          }
+        }
+      }
+    },
+    "Parallel!": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Параллель!"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Параллель!"
+          }
+        }
+      }
+    },
+    "Play": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ойнау"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Играть"
+          }
+        }
+      }
+    },
+    "Play a match": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Матч ойнау"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сыграть матч"
+          }
+        }
+      }
+    },
+    "Play again": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тағы ойнау"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ещё раз"
+          }
+        }
+      }
+    },
+    "Play your first match. Tips will show up the first time something happens.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алғашқы матчыңды ойна. Бірдеңе алғаш болғанда кеңес шығады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сыграй первый матч. Подсказки появятся, когда что-то случится впервые."
+          }
+        }
+      }
+    },
+    "Practice": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жаттығу"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тренировка"
+          }
+        }
+      }
+    },
+    "Pull back and let go": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тарт та жібер"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тяни и отпускай"
+          }
+        }
+      }
+    },
+    "Pull down for power, sideways to aim": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Төмен — күш, бүйірге — көздеу"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вниз — сила, в сторону — прицел"
+          }
+        }
+      }
+    },
+    "Pull down for power, sideways to aim, then let go.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Күш үшін төмен, көздеу үшін бүйірге тарт, сосын жібер."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тяни вниз — это сила, в сторону — прицел, потом отпускай."
+          }
+        }
+      }
+    },
+    "Rank %lld of 4": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дәрежесі: %lld/4"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ранг %lld из 4"
+          }
+        }
+      }
+    },
+    "Rival": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қарсылас"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Соперник"
+          }
+        }
+      }
+    },
+    "Round %lld": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld-кезең"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Партия %lld"
+          }
+        }
+      }
+    },
+    "Rules & words": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ереже мен сөздер"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правила и слова"
+          }
+        }
+      }
+    },
+    "Same rank — spin again": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тең түсті — қайта иіреміз"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ранг одинаковый — крутим снова"
+          }
+        }
+      }
+    },
+    "Shik": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шік"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шік"
+          }
+        }
+      }
+    },
+    "Shonqai": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шоңқай"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шоңқай"
+          }
+        }
+      }
+    },
+    "Shooter": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бита"
+          }
+        }
+      }
+    },
+    "Skip the lesson": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сабақты өткізіп жіберу"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пропустить урок"
+          }
+        }
+      }
+    },
+    "Slid in!": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сырғытпа!"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Заехала!"
+          }
+        }
+      }
+    },
+    "Standing on an end: no rank, spin again.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ұшымен тұр: дәрежесі жоқ, қайта иіреді."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стоит на торце: без ранга, перебрасывают."
+          }
+        }
+      }
+    },
+    "Stands upright on one end. Rare, and outside the ranking.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бір ұшымен тік тұрады. Сирек кездеседі, дәрежеден тыс."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стоит вертикально на одном торце. Редко и вне ранга."
+          }
+        }
+      }
+    },
+    "Stands upright on the other end. Rare, and outside the ranking.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Екінші ұшымен тік тұрады. Сирек кездеседі, дәрежеден тыс."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стоит вертикально на другом торце. Редко и вне ранга."
+          }
+        }
+      }
+    },
+    "Start over": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қайта бастау"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Начать заново"
+          }
+        }
+      }
+    },
+    "Step %lld of %lld": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$lld қадамның %1$lld-і"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шаг %1$lld из %2$lld"
+          }
+        }
+      }
+    },
+    "Taike": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тәйке"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тәйке"
+          }
+        }
+      }
+    },
+    "Target bone": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кеней"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Мишень"
+          }
+        }
+      }
+    },
+    "Target line": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Көн"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Линия мишеней"
+          }
+        }
+      }
+    },
+    "That one didn't count": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бұл ату есептелмеді"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Этот бросок не засчитан"
+          }
+        }
+      }
+    },
+    "The Kazakh game of knucklebones. Stand at the line, throw your saqa and knock the kenei out of the circle.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қазақтың асық ойыны. Сызыққа тұр, сақаңды ат та, кенейлерді шеңберден шығар."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Казахская игра в асыки. Встань у линии, брось сақу и выбей кенеи из круга."
+          }
+        }
+      }
+    },
+    "The Kazakh national game of throwing a bone at bones, on UNESCO's list of intangible heritage since 2017.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қазақтың ұлттық ойыны: асықты асыққа атасың. 2017 жылдан бері ЮНЕСКО-ның материалдық емес мұра тізімінде."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Казахская национальная игра: бросаешь кость в кости. С 2017 года — в списке нематериального наследия ЮНЕСКО."
+          }
+        }
+      }
+    },
+    "The asyqs standing in a row in the middle of the circle. Knock them out of it.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шеңбердің ортасында қатар тігілген асықтар. Оларды шеңберден шығару керек."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Асыки, что стоят в ряд посреди круга. Их нужно выбить из круга."
+          }
+        }
+      }
+    },
+    "The bones": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Асықтар"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кости"
+          }
+        }
+      }
+    },
+    "The field": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Алаң"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Поле"
+          }
+        }
+      }
+    },
+    "The kon up close: %lld kenei standing in a row, one saqa apart, with a dashed line 15 centimeters away on each side.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Көн жақыннан: %lld кеней бір сақа аралықпен қатар тұр, екі жағында 15 сантиметрде үзік сызық."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кон крупно: %lld кенеев в ряд, на расстоянии одной сақи друг от друга, по обе стороны — пунктир в 15 сантиметрах."
+          }
+        }
+      }
+    },
+    "The match": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Матч"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Матч"
+          }
+        }
+      }
+    },
+    "The referee's calls": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Төреші пәрмендері"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Команды судьи"
+          }
+        }
+      }
+    },
+    "The rules follow the regulation of the Kazakhstan Asyq Atu Federation, 2011–2022.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ережелер Қазақстан асық ату федерациясының регламенті бойынша, 2011–2022."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Правила — по регламенту Федерации асык ату Казахстана, 2011–2022."
+          }
+        }
+      }
+    },
+    "The short line in the middle of the circle where the kenei stand, with a parallel line on each side.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шеңбердің ортасындағы кенейлер тігілетін қысқа сызық, екі жағында параллель сызықтар бар."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Короткая линия посреди круга, на которой стоят кенеи, с параллельными линиями по обе стороны."
+          }
+        }
+      }
+    },
+    "The sides": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Асықтың жақтары"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стороны асыка"
+          }
+        }
+      }
+    },
+    "The throw": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ату"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бросок"
+          }
+        }
+      }
+    },
+    "Throw from the edge": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Шеңбер шетінен ату"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бросить с края круга"
+          }
+        }
+      }
+    },
+    "Throw from the other side": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Басқа жақтан ату"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Бросать с другой стороны"
+          }
+        }
+      }
+    },
+    "Throw line": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ату сызығы"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Линия броска"
+          }
+        }
+      }
+    },
+    "Try again": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тағы байқап көр"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ещё раз"
+          }
+        }
+      }
+    },
+    "Turn": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кезек"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ход"
+          }
+        }
+      }
+    },
+    "Victory!": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жеңіс!"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Победа!"
+          }
+        }
+      }
+    },
+    "When your saqa hits a kenei that stays inside the circle, the referee may give you one more throw at it:": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней шеңбер ішінде қалса, төреші оны тағы бір рет атуға рұқсат беруі мүмкін:"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Если сақа задела кеней, а он остался в круге, судья может дать ещё один бросок по нему:"
+          }
+        }
+      }
+    },
+    "Who starts": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кім бастайды"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кто начинает"
+          }
+        }
+      }
+    },
+    "Who starts?": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кім бастайды?"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кто начинает?"
+          }
+        }
+      }
+    },
+    "Who starts? Flick to spin your saqa": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кім бастайды? Сақаңды иіру үшін экранды сілте"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кто начинает? Смахни, чтобы закрутить сақу"
+          }
+        }
+      }
+    },
+    "Whose throw it is.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кімнің ату кезегі."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Чей сейчас бросок."
+          }
+        }
+      }
+    },
+    "Words": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сөздік"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Словарь"
+          }
+        }
+      }
+    },
+    "You": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сен"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ты"
+          }
+        }
+      }
+    },
+    "You knocked one out, so you throw again — closer now, from the circle's edge. Keep it going!": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кенейді шығардың — тағы атасың, енді жақынырақ, шеңбер шетінен. Жалғастыр!"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ты выбил кеней — бросаешь снова, теперь ближе, с края круга. Продолжай!"
+          }
+        }
+      }
+    },
+    "You missed, so the turn passes. Watch how they throw: you share the same kon, and whoever knocks out more first wins the round.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тимеді — кезек ауысады. Қарсыластың қалай атқанын көр: көн ортақ, керекті санды бірінші шығарған кезеңді ұтады."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ты промахнулся — ход переходит. Посмотри, как бросает соперник: кон у вас общий, партию выигрывает тот, кто первым выбьет нужное число."
+          }
+        }
+      }
+    },
+    "You won it": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сен ұттың"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Партия твоя"
+          }
+        }
+      }
+    },
+    "You won the match": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сен матчта жеңдің"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ты выиграл матч"
+          }
+        }
+      }
+    },
+    "You won the match.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сен матчта жеңдің."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ты выиграл матч."
+          }
+        }
+      }
+    },
+    "You're ready": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дайынсың"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ты готов"
+          }
+        }
+      }
+    },
+    "Younger players have a smaller circle, a shorter throw and 13 kenei instead of 15.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кішілерде шеңбер кішірек, ату қашықтығы қысқа, 15 емес, 13 кеней."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "У младших круг меньше, бросок короче и 13 кенеев вместо 15."
+          }
+        }
+      }
+    },
+    "Your rival won the match.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қарсылас матчта жеңді."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Соперник выиграл матч."
+          }
+        }
+      }
+    },
+    "Your rival's turn": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Қарсыластың кезегі"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ход соперника"
+          }
+        }
+      }
+    },
+    "Your saqa hit a kenei that stayed between the kon and the circle. Throw at it again from the far side, across the kon.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней көн мен шеңбердің арасында қалды. Оны қарсы жақтан, көннің үстінен тағы ат."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа задела кеней, и он остался между коном и кругом. Бей по нему ещё раз с противоположной стороны, через кон."
+          }
+        }
+      }
+    },
+    "Your saqa hit a kenei that stayed between the parallel lines. Throw at it again from the circle's wing.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней параллель сызықтардың арасында қалды. Оны шеңбердің қанатынан тағы ат."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа задела кеней, и он остался между параллельными линиями. Бей по нему ещё раз с «крыла» круга."
+          }
+        }
+      }
+    },
+    "Your saqa hit a kenei that stayed between the parallel lines. Throw at the glowing kenei from the circle's wing. ⇄ switches sides.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней параллель сызықтардың арасында қалды. Жарқыраған кенейді шеңбердің қанатынан ат. ⇄ — басқа жақ."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа задела кеней, и он остался между параллельными линиями. Бей по светящемуся кенею с «крыла» круга. ⇄ — другая сторона."
+          }
+        }
+      }
+    },
+    "Your saqa hit a kenei that stayed inside. Throw at the glowing kenei from the far side, across the kon — if you knock out a kon kenei too, both count.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней шеңбер ішінде қалды. Жарқыраған кенейді қарсы жақтан, көннің үстінен ат — көндегі кенейді де шығарсаң, екеуі де есептеледі."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа задела кеней, и он остался в круге. Бей по светящемуся кенею с противоположной стороны, через кон — если заодно выбьешь кеней с кона, засчитают оба."
+          }
+        }
+      }
+    },
+    "Your saqa hit a kenei that stayed just inside the circle line. Measure five feet along the circle and throw at it again.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней шеңбер сызығының дәл ішінде қалды. Шеңбер бойымен бес табан санап, оны тағы ат."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа задела кеней, и он остался у самой линии круга. Отмерь пять стоп вдоль круга и бей по нему ещё раз."
+          }
+        }
+      }
+    },
+    "Your saqa hit a kenei that stayed just inside the line. Throw at the glowing kenei from five feet along the circle. ⇄ switches sides.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң тиген кеней сызықтың дәл ішінде қалды. Шеңбер бойымен бес табан санап, жарқыраған кенейді ат. ⇄ — басқа жақ."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа задела кеней, и он остался у самой линии. Бей по светящемуся кенею, отмерив пять стоп вдоль круга. ⇄ — другая сторона."
+          }
+        }
+      }
+    },
+    "Your saqa landed": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң түсті"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Твоя сақа легла"
+          }
+        }
+      }
+    },
+    "Your saqa touched the carpet before the circle and slid in. Pull a little harder so it flies into the circle.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң шеңберге жетпей кілемге тиіп, ішке сырғып кірді. Шеңберге ұшып кіруі үшін сәл қаттырақ тарт."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа коснулась ковра до круга и заехала в него. Натяни чуть сильнее, чтобы она влетела в круг по воздуху."
+          }
+        }
+      }
+    },
+    "Your saqa touched the carpet before the circle and slid in. The throw doesn't count.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақаң шеңберге жетпей кілемге тиіп, ішке сырғып кірді. Ату есептелмейді."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сақа коснулась ковра до круга и заехала в него. Бросок не засчитывается."
+          }
+        }
+      }
+    },
+    "Your series": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сенің серияң"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Твоя серия"
+          }
+        }
+      }
+    },
+    "Your series ends here, and your rival takes the next throw.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Серияң осымен бітті, келесі ату — қарсыласта."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Здесь твоя серия заканчивается, следующий бросок — за соперником."
+          }
+        }
+      }
+    },
+    "Your shooter: the biggest, heaviest asyq. You throw it at the kenei.": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сенің сақаң: ең үлкен, ең ауыр асық. Оны кенейлерге атасың."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Твоя бита: самый большой и тяжёлый асык. Ею бьют по кенеям."
+          }
+        }
+      }
+    },
+    "Your side is higher — you start": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сенің жағың жоғары — сен бастайсың"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Твоя сторона старше — ты начинаешь"
+          }
+        }
+      }
+    },
+    "Your throw": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сенің кезегің"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Твой бросок"
+          }
+        }
+      }
+    },
+    "Youth": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жігіт"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Юноши"
+          }
+        }
+      }
+    },
+    "a target bone": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "нысана асық"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "мишень"
+          }
+        }
+      }
+    },
+    "back up": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "арқасы жоғары"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "спинкой вверх"
+          }
+        }
+      }
+    },
+    "defeat": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "жеңіліс"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "поражение"
+          }
+        }
+      }
+    },
+    "diagonal": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "диагональ"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "диагональ"
+          }
+        }
+      }
+    },
+    "don't slide it": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "сырғытпа"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "не скользи"
+          }
+        }
+      }
+    },
+    "five feet": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "бес табан"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "пять стоп"
+          }
+        }
+      }
+    },
+    "from the circle": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "шеңбер шетінен"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "с края круга"
+          }
+        }
+      }
+    },
+    "from the line": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "сызықтан"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "с линии"
+          }
+        }
+      }
+    },
+    "hollow up": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ойығы жоғары"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "выемкой вверх"
+          }
+        }
+      }
+    },
+    "it's out": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "шықты"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "вылетел"
+          }
+        }
+      }
+    },
+    "no hit": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "тимеді"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "не попал"
+          }
+        }
+      }
+    },
+    "on its other side": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "екінші қырымен"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "на другом боку"
+          }
+        }
+      }
+    },
+    "on its side, hollow up": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "қырымен, ойығы жоғары"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "на боку, выемкой вверх"
+          }
+        }
+      }
+    },
+    "one more throw, five feet along the circle": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "тағы бір ату — шеңбер бойымен бес табан"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ещё бросок — пять стоп вдоль круга"
+          }
+        }
+      }
+    },
+    "one more throw, from the circle's wing": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "тағы бір ату — шеңбер қанатынан"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ещё бросок — с крыла круга"
+          }
+        }
+      }
+    },
+    "one more throw, from the far side": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "тағы бір ату — қарсы жақтан"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ещё бросок — с противоположной стороны"
+          }
+        }
+      }
+    },
+    "out of the circle": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "шеңберден шықты"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "вылетел из круга"
+          }
+        }
+      }
+    },
+    "parallel": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "параллель"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "параллель"
+          }
+        }
+      }
+    },
+    "pull and let go": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "тарт та жібер"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "тяни и отпускай"
+          }
+        }
+      }
+    },
+    "shooting the asyqs": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "асық ату"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "стрельба по асыкам"
+          }
+        }
+      }
+    },
+    "slid in along the carpet — doesn't count": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "кілеммен сырғып кірді — есептелмейді"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "заехала по ковру — не считается"
+          }
+        }
+      }
+    },
+    "standing on its end": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ұшымен тұр"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "стоит на торце"
+          }
+        }
+      }
+    },
+    "standing on its other end": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "екінші ұшымен тұр"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "стоит на другом торце"
+          }
+        }
+      }
+    },
+    "the kenei go back": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "кенейлер орнына қайтады"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "кенеи возвращаются"
+          }
+        }
+      }
+    },
+    "the line of target bones": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "кенейлер тігілетін сызық"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "линия мишеней"
+          }
+        }
+      }
+    },
+    "the shooter bone": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ататын асық"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "бита"
+          }
+        }
+      }
+    },
+    "the spin": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "айналдыру"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "кручение"
+          }
+        }
+      }
+    },
+    "turn": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "кезек"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "очередь"
+          }
+        }
+      }
+    },
+    "victory": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "жеңіс"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "победа"
+          }
+        }
+      }
+    },
+    "“%@”": {
+      "localizations": {
+        "kk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@»"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "«%@»"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

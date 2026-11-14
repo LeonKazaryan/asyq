@@ -23,14 +23,20 @@ final class MatchController {
         /// Set once both saqas lie: who starts, or nil for a tie that needs another spin.
         var decided: Player??
         var isHomeSpinning = false
+        /// «Иіру» as this player reads it, fixed for the round.
+        var headline = TermHeadline(.iiru, learned: TermFamiliarity.isLearned(.iiru))
     }
 
     private(set) var moment = Moment.iiru(IiruRound())
+    /// «Жеңіс» or «Жеңіліс» at the end, as this player reads it.
+    private(set) var finalHeadline: TermHeadline?
     private(set) var match: BesTabanMatch
     private(set) var banner: RefereeBanner?
     /// Shown briefly when the turn changes hands.
     private(set) var turnNotice: Player?
     private(set) var showsHint = true
+    /// A one-time tip on screen.
+    private(set) var tip: MatchTip?
     let category: AgeCategory
     let stage: ArenaStage
     let rivalName: String
@@ -45,12 +51,19 @@ final class MatchController {
         self.category = category
         match = BesTabanMatch(category: category)
         stage = ArenaStage(category: category)
-        rival = RivalBot(name: "Нұрлан", seed: seed)
-        rivalName = "Нұрлан"
+        rivalName = Names.rival
+        rival = RivalBot(name: rivalName, seed: seed)
         stage.onEvent = { [weak self] event in self?.handle(event) }
         if DebugLaunchArguments.autoplay {
             autopilot = RivalBot(name: "Autopilot", seed: seed &+ 1)
         }
+        beginIiruRound()
+    }
+
+    /// A fresh round of иіру: both saqas off the carpet, the camera down to it.
+    private func beginIiruRound() {
+        moment = .iiru(IiruRound())
+        TermFamiliarity.markSeen(.iiru)
         stage.beginIiru()
         autoSpinIfNeeded()
     }
@@ -120,9 +133,7 @@ final class MatchController {
         schedule(after: 2.4) { [weak self] in
             guard let self else { return }
             if starter == nil {
-                moment = .iiru(IiruRound())
-                stage.beginIiru()
-                autoSpinIfNeeded()
+                beginIiruRound()
             } else {
                 stage.endIiru()
                 startPlaying()
@@ -158,6 +169,7 @@ final class MatchController {
             showsGuide: category != .eresek,
             targetKenei: spot.targetKenei
         ))
+        offerTip(for: spot, thrower: thrower)
         if announceTurn {
             turnNotice = thrower
             schedule(after: 1.4) { [weak self] in self?.turnNotice = nil }
@@ -184,7 +196,34 @@ final class MatchController {
         }
     }
 
+    /// The first time the player meets a series, the rival's turn or a referee's command.
+    private func offerTip(for spot: ThrowSpot, thrower: Player) {
+        let candidate: MatchTip? = switch (spot, thrower) {
+        case (.circleEdge, .home): .series
+        case (.line, .away): .rivalTurn
+        case (.besTaban, .home): .besTaban
+        case (.diagonal, .home): .diagonal
+        case (.parallel, .home): .parallel
+        default: nil
+        }
+        show(candidate)
+    }
+
+    private func show(_ candidate: MatchTip?) {
+        guard autopilot == nil, let candidate, !candidate.hasBeenShown else { return }
+        candidate.markShown()
+        tip = candidate
+    }
+
+    func dismissTip() {
+        tip = nil
+    }
+
     private func settleThrow(_ facts: ThrowFacts, saqaSide: Side?) {
+        tip = nil
+        if match.thrower == .home, facts.isSlide {
+            schedule(after: GameTuning.Result.bannerTime) { [weak self] in self?.show(.slide) }
+        }
         if match.thrower == .home { showsHint = false }
         let previousThrower = match.thrower
         let outcome = match.record(facts)
@@ -207,6 +246,9 @@ final class MatchController {
                     schedule(after: 2) { [weak self] in self?.continueAfterPartia() }
                 }
             case .matchOver(let winner):
+                let term: Term = winner == .home ? .zhenis : .zhenilis
+                finalHeadline = TermHeadline(term, learned: TermFamiliarity.isLearned(term), exclaimed: winner == .home)
+                TermFamiliarity.markSeen(term)
                 moment = .matchOver(winner: winner)
             case .playing:
                 // A command picks the nearer side by default; the player may switch.
@@ -231,9 +273,7 @@ final class MatchController {
         match.startNextPartia()
         stage.resetKon(animated: true)
         if match.phase == .iiru {
-            moment = .iiru(IiruRound())
-            stage.beginIiru()
-            autoSpinIfNeeded()
+            beginIiruRound()
         } else {
             startPlaying()
         }

@@ -46,6 +46,7 @@ xcodebuild -project Asyq.xcodeproj -scheme Asyq \
 - **DesignSystem-токены** вместо магических чисел в фичах (появятся в M2).
 - **Детерминизм.** Симуляция не зависит от времени кадра, `Date()`, `random()` без сида и порядка словарей. Всё, что задаёт бросок или судит итог (скорости, начальные позы, стороны, «выбит»), считается через `SimMath`, а не через simd-хелперы и libm (ADR-002). Тест детерминизма должен оставаться зелёным.
 - **Reduce Motion** — в каждой новой анимации.
+- **Языки (ADR-011).** Каждая строка интерфейса — английский ключ в `Text("…")` / `LocalizedStringResource`, и сразу перевод на ru и kk в `Asyq/Resources/Localizable.xcstrings`. Казахские игровые слова — только через `Term` (`word`, `call`, `gloss`, `TermHeadline`), никогда `Text(verbatim: "Шықты")`. Проверка: ключи вытаскиваются из `*.stringsdata` в DerivedData после сборки.
 - **Обновляй доки:** галочки в роадмапе, решения в журнал ADR (`03-architecture.md`).
 - **Правила Apple** — `docs/07-apple-rules.md`, чек-лист перед мержем. Если задача упирается в правило Apple, скажи Leon явно.
 
@@ -56,8 +57,10 @@ xcrun simctl launch --terminate-running-process "iPhone 16 Pro" com.leonkazaryan
 xcrun simctl io "iPhone 16 Pro" screenshot shot.png
 ```
 
-- `-AsyqDebugScreen match|practice` — сразу на экран, без меню.
-- `-AsyqDebugAutoplay YES` — в матче бот играет и за тебя: можно смотреть матч целиком. Ход судьи пишется в консоль строками `[match] …` (`xcrun simctl launch --console-pty …`).
+- `-AsyqDebugScreen menu|match|practice|lesson|rules` — сразу на экран. Без аргумента новый игрок попадает в урок, остальные — в меню.
+- `-AsyqDebugFreshPlayer YES` — как новый игрок: урок не пройден, подсказки и выученные слова забыты.
+- Язык: `-AppleLanguages "(ru)" -AppleLocale ru_RU` (или `(kk)`, `kk_KZ`).
+- `-AsyqDebugAutoplay YES` — в матче бот играет и за тебя, урок проходит сам: можно смотреть целиком. Ход судьи пишется в консоль строками `[match] …` (`xcrun simctl launch --console-pty …`).
 - `-AsyqDebugSeed N` — кости соперника: матч повторяется один в один.
 - `-AsyqDebugSpin сила,наклон` — иіру само крутится.
 - `-AsyqDebugThrow угол°,сила[,подкрутка]` — в тренировке бросает сам через 1,2 с. Отрицательный угол не передать (значение с «-» читается как новый флаг).

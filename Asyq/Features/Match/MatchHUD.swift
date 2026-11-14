@@ -28,6 +28,10 @@ struct MatchHUD: View {
                 .animation(Motion.snappy, value: controller.canSwitchFlank)
                 .transition(.opacity)
             }
+            if let tip = controller.tip, controller.banner == nil, controller.moment == .playing {
+                TipCard(tip: tip, onDismiss: controller.dismissTip)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+            }
             center
                 .frame(maxHeight: .infinity, alignment: .top)
                 .padding(.top, 24)
@@ -35,6 +39,11 @@ struct MatchHUD: View {
         }
         .padding(.horizontal, 16)
         .animation(Motion.smooth, value: controller.moment)
+        .animation(Motion.bouncy, value: controller.tip)
+        // Pulling the slingshot means the tip was read.
+        .onChange(of: controller.stage.pullPower != nil) { _, pulling in
+            if pulling { controller.dismissTip() }
+        }
     }
 
     @ViewBuilder
@@ -46,7 +55,7 @@ struct MatchHUD: View {
                     .transition(.opacity)
             case .playing:
                 if let banner = controller.banner {
-                    RefereeBannerView(banner: banner, rivalName: controller.rivalName)
+                    RefereeBannerView(banner: banner)
                         .id(banner.serial)
                         .transition(.asymmetric(
                             insertion: .scale(scale: 1.6).combined(with: .opacity),
@@ -58,7 +67,7 @@ struct MatchHUD: View {
                 }
             case .partiaOver(let winner):
                 ResultCard(
-                    title: Text("Partia \(controller.match.partia)"),
+                    title: Text("Round \(controller.match.partia)"),
                     headline: winner == .home ? Text("You won it") : Text("\(controller.rivalName) won it"),
                     score: controller.match,
                     primary: (Text("Next partia"), controller.continueAfterPartia),
@@ -67,7 +76,7 @@ struct MatchHUD: View {
                 .transition(.scale(scale: 0.92).combined(with: .opacity))
             case .matchOver(let winner):
                 ResultCard(
-                    title: Text(verbatim: winner == .home ? "ЖЕҢІС!" : "ЖЕҢІЛІС"),
+                    title: Text(verbatim: controller.finalHeadline?.title ?? ""),
                     headline: winner == .home ? Text("You won the match") : Text("\(controller.rivalName) won the match"),
                     score: controller.match,
                     primary: (Text("Play again"), onRematch),
@@ -108,7 +117,7 @@ private struct Scoreboard: View {
         HStack(spacing: 0) {
             side(.home)
             VStack(spacing: 2) {
-                Text("Partia \(controller.match.partia)")
+                Text("Round \(controller.match.partia)")
                     .font(.system(.caption2, design: .rounded).weight(.semibold))
                     .foregroundStyle(Palette.ink.color.opacity(0.55))
                 Text(verbatim: "/ \(controller.category.winningCount)")
@@ -183,7 +192,7 @@ private struct TurnNotice: View {
 
     var body: some View {
         VStack(spacing: 2) {
-            Text(verbatim: "КЕЗЕК")
+            Text(verbatim: Term.kezek.word.uppercased())
                 .font(.system(.caption, design: .rounded).weight(.heavy))
                 .tracking(2)
                 .foregroundStyle(Palette.paper.color.opacity(0.8))
@@ -202,14 +211,21 @@ private struct IiruPanel: View {
 
     var body: some View {
         VStack(spacing: 14) {
-            VStack(spacing: 2) {
-                Text(verbatim: "ИІРУ")
+            VStack(spacing: 4) {
+                Text(verbatim: round.headline.title)
                     .font(Typography.call)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
                     .foregroundStyle(Palette.paper.color)
+                Text(verbatim: round.headline.detail)
+                    .font(Typography.caption)
+                    .foregroundStyle(Palette.paper.color.opacity(0.8))
                 Text(subtitle)
                     .font(Typography.label)
-                    .foregroundStyle(Palette.paper.color.opacity(0.88))
+                    .foregroundStyle(Palette.paper.color.opacity(0.92))
                     .multilineTextAlignment(.center)
+                    .padding(.top, 4)
+                    .contentTransition(.opacity)
             }
             .shadow(color: Palette.ink.color.opacity(0.35), radius: 12, y: 3)
             HStack(spacing: 10) {
@@ -217,6 +233,7 @@ private struct IiruPanel: View {
                 SideChip(name: Text(verbatim: rivalName), side: round.away, color: Palette.rivalSaqa.color)
             }
             .animation(Motion.bouncy, value: round)
+            RankingLegend()
         }
     }
 
@@ -236,18 +253,64 @@ private struct SideChip: View {
     let color: Color
 
     var body: some View {
-        HStack(spacing: 6) {
+        HStack(spacing: 8) {
             Circle().fill(color).frame(width: 8, height: 8)
             name
                 .foregroundStyle(Palette.ink.color.opacity(0.6))
-            Text(verbatim: side?.term ?? "…")
-                .foregroundStyle(Palette.ink.color)
-                .contentTransition(.opacity)
+            if let side {
+                SideLabel(side: side)
+                    .transition(.scale.combined(with: .opacity))
+            } else {
+                Text(verbatim: "…").foregroundStyle(Palette.ink.color.opacity(0.4))
+            }
         }
         .font(Typography.label)
         .padding(.horizontal, 14)
         .frame(height: 40)
         .glassCapsule()
+    }
+}
+
+/// A one-time explanation, under the scoreboard.
+private struct TipCard: View {
+    let tip: MatchTip
+    let onDismiss: () -> Void
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 12) {
+            if let command = tip.command {
+                CommandDiagram(command: command)
+                    .frame(width: 84, height: 84)
+            }
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    Text(tip.title)
+                        .font(.system(.subheadline, design: .rounded).weight(.bold))
+                    if let term = tip.term {
+                        Text(verbatim: term.word)
+                            .font(Typography.caption)
+                            .foregroundStyle(Palette.ink.color.opacity(0.5))
+                    }
+                }
+                Text(tip.message)
+                    .font(.system(.footnote, design: .rounded))
+                    .foregroundStyle(Palette.ink.color.opacity(0.8))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer(minLength: 0)
+            Button(action: onDismiss) {
+                Image(systemName: "xmark")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(Palette.ink.color.opacity(0.5))
+                    .frame(width: 28, height: 28)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(Text("Got it"))
+        }
+        .foregroundStyle(Palette.ink.color)
+        .padding(14)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .shadow(color: Palette.ink.color.opacity(0.15), radius: 16, y: 6)
     }
 }
 

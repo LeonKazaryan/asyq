@@ -29,7 +29,7 @@ enum AgeCategory: String, CaseIterable, Sendable {
         self == .eresek ? 15 : 13
     }
 
-    /// The category's name in the game (docs/05-rules.md, §3).
+    /// The category's Kazakh name (docs/05-rules.md, §3).
     var term: String {
         switch self {
         case .bala: "Бала"

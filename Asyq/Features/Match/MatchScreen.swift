@@ -18,7 +18,7 @@ struct MatchScreen: View {
                 .ignoresSafeArea()
             ArenaVignette()
             if controller.canSpin {
-                IiruSurface(controller: controller)
+                FlickSurface { strength, tilt in controller.spin(strength: strength, tilt: tilt) }
             } else {
                 SlingshotSurface(stage: controller.stage)
             }
@@ -42,26 +42,5 @@ struct MatchScreen: View {
         controller.stop()
         controller = MatchController(category: controller.category)
         controller.stage.reduceMotion = reduceMotion
-    }
-}
-
-/// Иіру: a quick flick anywhere spins the saqa; faster spins harder, the flick's lean tilts it.
-private struct IiruSurface: View {
-    let controller: MatchController
-
-    var body: some View {
-        Color.clear
-            .contentShape(Rectangle())
-            .ignoresSafeArea()
-            .gesture(
-                DragGesture(minimumDistance: 12)
-                    .onEnded { value in
-                        let velocity = value.velocity
-                        let speed = (velocity.width * velocity.width + velocity.height * velocity.height).squareRoot()
-                        guard speed > 250 else { return }
-                        let strength = min(Double(speed) / GameTuning.Iiru.fullFlick, 1)
-                        controller.spin(strength: Float(strength), tilt: Float(velocity.width / speed))
-                    }
-            )
     }
 }

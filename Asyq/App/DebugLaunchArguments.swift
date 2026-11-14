@@ -29,7 +29,16 @@ enum DebugLaunchArguments {
         numbers("AsyqDebugSeed").map { UInt64($0[0]) }
     }
 
-    /// `-AsyqDebugScreen practice|match`: skip the menu.
+    /// `-AsyqDebugFreshPlayer YES`: forget the lesson, the tips and every word learned.
+    static var freshPlayer: Bool {
+        #if DEBUG
+        UserDefaults.standard.bool(forKey: "AsyqDebugFreshPlayer")
+        #else
+        false
+        #endif
+    }
+
+    /// `-AsyqDebugScreen menu|practice|match|lesson|rules`: open a screen directly.
     static var screen: String? {
         #if DEBUG
         UserDefaults.standard.string(forKey: "AsyqDebugScreen")

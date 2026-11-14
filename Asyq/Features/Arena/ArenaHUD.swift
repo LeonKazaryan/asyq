@@ -3,16 +3,56 @@ import SwiftUI
 /// What the referee just called, for the banner.
 struct RefereeBanner: Equatable {
     var call: RefereeCall
+    /// The call as this player reads it: meaning first until they know the word.
+    var headline: TermHeadline
     /// How the saqa came to rest, as the referee would call it.
     var saqaSide: Side?
     /// Changes on every call, so the same call twice still animates.
     var serial: Int
+
+    /// A banner for `call`, counting it as seen by the player.
+    init(call: RefereeCall, saqaSide: Side?, serial: Int) {
+        self.call = call
+        self.saqaSide = saqaSide
+        self.serial = serial
+        let term = call.term
+        headline = TermHeadline(term, learned: TermFamiliarity.isLearned(term), detail: call.detail, exclaimed: call.isExclaimed)
+        TermFamiliarity.markSeen(term)
+    }
 }
 
-/// The referee's call, slammed onto the screen: the Kazakh word, what it means, his gesture.
+extension RefereeCall {
+    var term: Term {
+        switch self {
+        case .out, .partiaWon, .matchWon: .shyqty
+        case .miss: .timedi
+        case .slide: .syrgytpa
+        case .besTaban: .besTaban
+        case .diagonal: .diagonal
+        case .parallel: .parallel
+        }
+    }
+
+    /// What to say under the word once the player knows it.
+    var detail: LocalizedStringResource {
+        switch self {
+        case .out, .partiaWon, .matchWon: "out of the circle"
+        case .miss: "the kenei go back"
+        case .slide: "slid in along the carpet — doesn't count"
+        case .besTaban: "one more throw, five feet along the circle"
+        case .diagonal: "one more throw, from the far side"
+        case .parallel: "one more throw, from the circle's wing"
+        }
+    }
+
+    var isExclaimed: Bool {
+        self != .miss
+    }
+}
+
+/// The referee's call, slammed onto the screen: the headline, what it means, his gesture.
 struct RefereeBannerView: View {
     let banner: RefereeBanner
-    var rivalName: String = ""
 
     var body: some View {
         VStack(spacing: 4) {
@@ -24,7 +64,7 @@ struct RefereeBannerView: View {
                     .glassCircle()
                     .padding(.bottom, 6)
             }
-            Text(verbatim: title)
+            Text(verbatim: banner.headline.title)
                 .font(Typography.call)
                 .tracking(1)
                 .lineLimit(1)
@@ -35,16 +75,15 @@ struct RefereeBannerView: View {
                     .font(Typography.callDetail)
                     .foregroundStyle(Palette.paper.color)
             }
-            Text(subtitle)
+            Text(verbatim: banner.headline.detail)
                 .font(Typography.label)
-                .foregroundStyle(Palette.paper.color.opacity(0.88))
+                .foregroundStyle(Palette.paper.color.opacity(0.9))
                 .multilineTextAlignment(.center)
             if let side = banner.saqaSide {
-                HStack(spacing: 6) {
-                    Text(verbatim: "Сақа")
+                HStack(spacing: 8) {
+                    Text(verbatim: Term.saqa.label)
                         .foregroundStyle(Palette.ink.color.opacity(0.55))
-                    Text(verbatim: side.term)
-                        .foregroundStyle(Palette.ink.color)
+                    SideLabel(side: side)
                 }
                 .font(Typography.caption)
                 .padding(.horizontal, 12)
@@ -59,30 +98,6 @@ struct RefereeBannerView: View {
         .accessibilityElement(children: .combine)
     }
 
-    private var title: String {
-        switch banner.call {
-        case .out: "ШЫҚТЫ!"
-        case .miss: "ТИМЕДІ"
-        case .slide: "СЫРҒЫТПА!"
-        case .besTaban: "БЕС ТАБАН!"
-        case .diagonal: "ДИАГОНАЛЬ!"
-        case .parallel: "ПАРАЛЛЕЛЬ!"
-        case .partiaWon, .matchWon: "ЖАРАЙСЫҢ!"
-        }
-    }
-
-    private var subtitle: LocalizedStringKey {
-        switch banner.call {
-        case .out: "Out of the circle"
-        case .miss: "Missed — the kenei go back"
-        case .slide: "The saqa slid in along the carpet — doesn't count"
-        case .besTaban: "Five feet along the circle — one more throw"
-        case .diagonal: "From across the circle — one more throw"
-        case .parallel: "Between the lines — one more throw from the wing"
-        case .partiaWon, .matchWon: ""
-        }
-    }
-
     /// Stand-ins for the referee's hand signs (Регламент, с. 24–25) until we draw our own.
     private var symbol: String? {
         switch banner.call {
@@ -91,6 +106,40 @@ struct RefereeBannerView: View {
         case .parallel: "equal"
         case .slide: "exclamationmark.triangle"
         default: nil
+        }
+    }
+}
+
+/// Which side beats which, in dots: readable without a word of Kazakh. One row where it
+/// fits, two where it doesn't.
+struct RankingLegend: View {
+    private let sides: [Side] = [.alshy, .taike, .buk, .shik]
+
+    var body: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 10) { items(sides) }
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 10) { items(Array(sides.prefix(2)), trailing: true) }
+                HStack(spacing: 10) { items(Array(sides.suffix(2))) }
+            }
+        }
+        .font(Typography.caption)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 9)
+        .glassCapsule()
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("Alshy beats taike, taike beats buk, buk beats shik"))
+    }
+
+    @ViewBuilder
+    private func items(_ group: [Side], trailing: Bool = false) -> some View {
+        ForEach(group, id: \.self) { side in
+            SideLabel(side: side)
+            if side != group.last || trailing {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 9, weight: .bold))
+                    .foregroundStyle(Palette.ink.color.opacity(0.35))
+            }
         }
     }
 }
@@ -141,9 +190,9 @@ struct SpotChip: View {
         switch spot {
         case .line: Text("from the line")
         case .circleEdge: Text("from the circle")
-        case .besTaban: Text(verbatim: "Бес табан")
-        case .diagonal: Text(verbatim: "Диагональ")
-        case .parallel: Text(verbatim: "Параллель")
+        case .besTaban: Text(verbatim: Term.besTaban.label)
+        case .diagonal: Text(verbatim: Term.diagonal.label)
+        case .parallel: Text(verbatim: Term.parallel.label)
         }
     }
 }
@@ -170,7 +219,8 @@ struct RangeReadout: View {
     }
 }
 
-/// «Тарт та жібер»: shown until the first throw.
+/// «Тарт та жібер»: shown until the first throw. The instruction in the player's language,
+/// the Kazakh words under it.
 struct PullHint: View {
     var body: some View {
         VStack(spacing: 6) {
@@ -180,13 +230,26 @@ struct PullHint: View {
                 .phaseAnimator([0, 1]) { content, phase in
                     content.offset(y: phase * 8).opacity(1 - phase * 0.4)
                 } animation: { _ in .easeInOut(duration: 0.9) }
-            Text(verbatim: "Тарт та жібер")
-                .font(.system(.title3, design: .rounded).weight(.bold))
-                .foregroundStyle(Palette.paper.color)
-            Text("Pull down, then let go")
-                .font(Typography.caption)
-                .foregroundStyle(Palette.paper.color.opacity(0.8))
+            Group {
+                if TermLanguage.current == .kazakh {
+                    Text(verbatim: Term.tartTaZhiber.kazakh)
+                } else {
+                    Text(Term.tartTaZhiber.call)
+                }
+            }
+            .font(.system(.title3, design: .rounded).weight(.bold))
+            .foregroundStyle(Palette.paper.color)
+            Group {
+                if TermLanguage.current == .kazakh {
+                    Text(Term.tartTaZhiber.explanation)
+                } else {
+                    Text(verbatim: Term.tartTaZhiber.word)
+                }
+            }
+            .font(Typography.caption)
+            .foregroundStyle(Palette.paper.color.opacity(0.8))
         }
+        .multilineTextAlignment(.center)
         .shadow(color: Palette.ink.color.opacity(0.3), radius: 10, y: 3)
         .padding(.bottom, 4)
     }
@@ -232,6 +295,27 @@ struct SlingshotSurface: View {
                     }
             )
             .allowsHitTesting(stage.canPull)
+    }
+}
+
+/// Иіру: a quick flick anywhere spins the saqa; faster spins harder, the flick's lean tilts it.
+struct FlickSurface: View {
+    let onFlick: (_ strength: Float, _ tilt: Float) -> Void
+
+    var body: some View {
+        Color.clear
+            .contentShape(Rectangle())
+            .ignoresSafeArea()
+            .gesture(
+                DragGesture(minimumDistance: 12)
+                    .onEnded { value in
+                        let velocity = value.velocity
+                        let speed = (velocity.width * velocity.width + velocity.height * velocity.height).squareRoot()
+                        guard speed > 250 else { return }
+                        let strength = min(Double(speed) / GameTuning.Iiru.fullFlick, 1)
+                        onFlick(Float(strength), Float(velocity.width / speed))
+                    }
+            )
     }
 }
 

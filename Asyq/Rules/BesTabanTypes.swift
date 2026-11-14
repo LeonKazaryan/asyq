@@ -66,7 +66,7 @@ struct ThrowFacts: Equatable, Sendable {
 }
 
 /// What the referee announces, in order.
-enum RefereeCall: Equatable, Sendable {
+enum RefereeCall: Hashable, Sendable {
     /// «Шықты!»: this many went out and count for the thrower.
     case out(Int)
     /// «Тимеді»: nothing out, the turn passes.
